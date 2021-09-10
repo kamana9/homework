@@ -1,0 +1,18 @@
+<h1>To do Lists</h1>
+<a href="{%url 'edit' %}">Add Task</a>
+
+<table>
+    <th>Items</th>  
+    {% for task in tasks %} <!--obect_list is costomized into tasks !-->
+        <tr>
+            <td>{{task.title}}</td>
+            <td><a href="{% url 'task' task.id %}">View</a></td>   <!--'task' from view!-->
+            <td><a href="{% url 'update' task.id %}">Edit</a></td>
+            <td><a href="{% url 'remove' task.id %}">Delete</a></td>
+        </tr>
+        {% empty %}
+            <h3>No items in list</h3>
+            
+        {% endfor %}
+    </table>
+     

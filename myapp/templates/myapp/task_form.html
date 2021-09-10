@@ -1,0 +1,9 @@
+<h1>Create,edit,view</h1>
+<a href="{% url 'tasks' %}">Back</a>
+
+<form method="POST" action="">
+{% csrf_token %} <!--csrftoken protect us from cross site forgery request-->
+{{form.as_p}} <!--.as p to format-->
+    <input type="submit" value="Submit"> <!--django already created the model form and it passes
+     it in and bydefault the form name is already form-->
+</form>
